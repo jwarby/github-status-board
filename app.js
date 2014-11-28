@@ -38,6 +38,9 @@ $(document).ready(function() {
 
   $.get(
     'https://api.github.com/users/' + user + '/repos',
+    {
+      sort: 'updated'
+    },
     function(repos) {
       if (repos.length === 0) {
         $('.jumbotron').toggleClass('hide');
