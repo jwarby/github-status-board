@@ -1,0 +1,65 @@
+body h2 img {
+  height: 50px;
+  vertical-align: middle;
+}
+body h2 small {
+  font-weight: lighter;
+}
+form input[type="text"] {
+  border-radius: 10px;
+  font-size: 2em;
+  height: 2em;
+}
+.alert {
+  opacity: 0.8;
+}
+a[data-dismiss] {
+  color: white;
+}
+section.panel.panel-default {
+  margin: 10px 10px;
+  padding: 0px 0px 10px 0px;
+  position: relative;
+}
+section.panel.panel-default h3 {
+  margin: 15px 0px;
+  padding: 0px 20px;
+}
+section.panel.panel-default h3 img {
+  height: 32px;
+}
+section.panel.panel-default h3 i {
+  font-size: 32px;
+  vertical-align: middle;
+}
+section.panel.panel-default h3 i.fa-code-fork {
+  transform: rotate(5deg);
+  font-size: 0.8em;
+}
+section.panel.panel-default table {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 10px 0px 15px;
+}
+section.panel.panel-default table td {
+  font-size: 1.5em;
+  height: 3em;
+  vertical-align: middle;
+}
+section.panel.panel-default table td a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+section.panel.panel-default table td a i {
+  margin-right: 1em;
+}
+section.panel.panel-default div {
+  margin-bottom: 3px;
+  padding: 0px 20px;
+}
+section.panel.panel-default .footer {
+  font-weight: lighter;
+  margin-top: 10px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Status Board</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+  </head>
+  <body>
+    <div id="intro" class="container">
+      <div id="form" class="jumbotron hide">
+        <h1>GitHub Status Board</h1>
+
+        <p>Get a quick overview of all of your GitHub projects.</p>
+
+        <hr>
+        <p>Enter a GitHub user or organisation below:</p>
+
+        <form class="form text-center">
+          <div class="form-group">
+            <input type="text" class="form-control text-center" required>
+          </div>
+
+          <div id="error-NotFound" class="alert alert-danger hide">
+            No user or organisation called <strong class="name"></strong> found
+            <a href="#" data-dismiss="alert" class="pull-right">
+              <i class="fa fa-close"></i>
+            </a>
+          </div>
+
+          <div id="error-NoRepos" class="alert alert-danger hide">
+            <strong class="name"></strong> has no public repositories
+            <a href="#" data-dismiss="alert" class="pull-right">
+              <i class="fa fa-close"></i>
+            </a>
+          </div>
+
+          <div id="error-generic" class="alert alert-danger hide">
+            Something has gone wrong, sorry
+          </div>
+
+          <button type="submit" class="btn btn-lg btn-primary">Status me up</button>
+        </form>
+      </div>
+
+      <div id="#loader" class="jumbotron text-center">
+        <h1>
+          <big>
+            <i class="fa fa-spinner fa-spin"></i> loading...
+          </big>
+        </h1>
+      </div>
+    </div>
+
+    <script src="//momentjs.com/downloads/moment.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>
