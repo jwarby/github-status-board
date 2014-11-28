@@ -24,6 +24,8 @@ $(document).ready(function() {
     return count === 1 ? string : string + 's';
   });
 
+  Handlebars.registerPartial('footer', $('footer').html());
+
   var template = function(path, data) {
     var template = $.ajax({
       url: './templates/' + path,

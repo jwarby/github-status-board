@@ -66,3 +66,21 @@ section.panel.panel-default .footer {
   font-weight: lighter;
   margin-top: 10px;
 }
+.container {
+  width: 80%;
+}
+footer {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 10.75%;
+  margin-right: 10.75%;
+  padding: 20px 1% 15px;
+  box-shadow: 0px -3px 5px -1px rgba(40, 40, 40, 0.1);
+}
+footer .row {
+  padding-left: 15px;
+  padding-right: 15px;
+}
