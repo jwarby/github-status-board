@@ -4,6 +4,7 @@ body h2 img {
 }
 body h2 small {
   font-weight: lighter;
+  white-space: nowrap;
 }
 form input[type="text"] {
   border-radius: 10px;
