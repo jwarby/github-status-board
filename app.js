@@ -1,9 +1,13 @@
 $(document).ready(function() {
-  var user = window.location.search.slice(1);
+  var query = {};
+  location.search.substr(1).split("&").forEach(function(item) {
+    query[item.split("=")[0]] = item.split("=")[1]}
+  );
+  var user = query.user;
 
   $('form').submit(function(ev) {
     ev.preventDefault();
-    window.location.search = '?' + $(this).find('input').val();
+    window.location.search = '?user=' + $(this).find('input').val();
   });
 
   if (!user) {
