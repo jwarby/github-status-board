@@ -90,9 +90,11 @@ footer .row {
   }
   footer {
     margin: 0 0;
+    padding: 3px 3px 0px 3px;
   }
   .jumbotron {
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: 50px;
   }
 }
