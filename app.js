@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var query = {};
-  location.search.substr(1).split("&").forEach(function(item) {
-    query[item.split("=")[0]] = item.split("=")[1]}
+  location.search.substr(1).split('&').forEach(function(item) {
+    query[item.split('=')[0]] = item.split('=')[1]}
   );
   var user = query.user;
 
