@@ -56,7 +56,7 @@ section.panel.panel-default table td a {
   color: inherit;
 }
 section.panel.panel-default table td a i {
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 section.panel.panel-default div {
   margin-bottom: 3px;
