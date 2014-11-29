@@ -54,9 +54,9 @@ $(document).ready(function() {
         return;
       }
 
+      console.log(repos[0].owner);
       $('body').html(template('page/default.hbs', {
         user: repos[0].owner,
-        title: document.title,
         repo_count: repos.length
       }));
 

@@ -4,8 +4,9 @@
       <i class="fa fa-long-arrow-left"></i> Back
     </a>
     <h2>
-      <img id="user-avatar" src="{{ user.avatar_url }}" alt="{{ user.name }}'s avatar image" />
-      {{ title }}
+      <a href="{{ user.html_url }}">
+        <img id="user-avatar" src="{{ user.avatar_url }}" alt="{{ user.login }}'s avatar image" />
+        {{ user.login }}</a>'s Project Status Board
 
       <small>{{ repo_count }} repositories</small>
     </h2>
