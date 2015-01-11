@@ -10,12 +10,6 @@ $(document).ready(function() {
     window.location.search = '?user=' + $(this).find('input').val();
   });
 
-  if (!user) {
-    $('#form').removeClass('hide').siblings().addClass('hide');
-  } else {
-    $('form').find('input').val(user);
-  }
-
   Handlebars.registerHelper('moment', function(date) {
     return moment(date).fromNow();
   });
@@ -24,20 +18,32 @@ $(document).ready(function() {
     return count === 1 ? string : string + 's';
   });
 
-  Handlebars.registerPartial('footer', $('footer').html());
+  Handlebars.registerHelper('currentYear', function() {
+    return new Date().getFullYear();
+  });
 
-  var template = function(path, data) {
+  var getTemplate = function(path) {
     var template = $.ajax({
       url: './templates/' + path,
       type: 'GET',
       async: false
     });
 
-    return Handlebars.compile(template.responseText)(data);
+    return Handlebars.compile(template.responseText);
   };
 
+  var render = function(path, data) {
+    return getTemplate(path)(data);
+  };
+
+  Handlebars.registerPartial('footer', getTemplate('footer.hbs'));
+
   if (!user) {
+    $('#form').removeClass('hide').siblings().addClass('hide');
+    $('footer').html(render('footer.hbs'));
     return;
+  } else {
+    $('form').find('input').val(user);
   }
 
   document.title = user + '\'s project status board';
@@ -54,8 +60,7 @@ $(document).ready(function() {
         return;
       }
 
-      console.log(repos[0].owner);
-      $('body').html(template('page/default.hbs', {
+      $('body').html(render('page/default.hbs', {
         user: repos[0].owner,
         repo_count: repos.length
       }));
@@ -67,7 +72,7 @@ $(document).ready(function() {
           repo.icon = 'img/icon/' + icon[0] + '.png';
         }
 
-        $('.jumbotron').find('.clearfix').before(template(
+        $('.jumbotron').find('.clearfix').before(render(
           'repository/default.hbs', repo
         ));
       });
